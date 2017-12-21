@@ -9,6 +9,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -37,7 +43,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6Y-1w-sju">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6Y-1w-sju" customClass="GradientView" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snf-CW-VPX">
@@ -85,19 +91,69 @@
         <scene sceneID="7Ky-Wj-vuc">
             <objects>
                 <viewController id="8tD-iw-fHT" customClass="ChannelVC" customModule="Smack" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Q2C-S2-6yU">
+                    <view key="view" contentMode="scaleToFill" id="Q2C-S2-6yU" customClass="GradientView" customModule="Smack" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtf-3k-VV9">
+                                <rect key="frame" x="9" y="44" width="69" height="32"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXr-5a-p1H">
+                                <rect key="frame" x="9" y="91" width="79" height="26"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux0-lc-IFj">
+                                <rect key="frame" x="281" y="93" width="22" height="22"/>
+                                <state key="normal" image="addChannelButton"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-XJ-Tbp">
+                                <rect key="frame" x="9" y="543" width="99" height="99"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k9O-lK-0jd">
+                                <rect key="frame" x="9" y="137" width="294" height="386"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tN-TQ-3sO">
+                                <rect key="frame" x="128" y="575" width="50" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cOt-XJ-Tbp" firstAttribute="leading" secondItem="1yH-6i-z3q" secondAttribute="leading" constant="9" id="8G4-ai-K2c"/>
+                            <constraint firstItem="k9O-lK-0jd" firstAttribute="leading" secondItem="1yH-6i-z3q" secondAttribute="leading" constant="9" id="AUu-G0-hpO"/>
+                            <constraint firstItem="jtf-3k-VV9" firstAttribute="top" secondItem="1yH-6i-z3q" secondAttribute="top" constant="24" id="GHr-N9-FX7"/>
+                            <constraint firstItem="Ux0-lc-IFj" firstAttribute="centerY" secondItem="jXr-5a-p1H" secondAttribute="centerY" id="GWf-Hw-DLa"/>
+                            <constraint firstItem="3tN-TQ-3sO" firstAttribute="leading" secondItem="cOt-XJ-Tbp" secondAttribute="trailing" constant="20" id="TQD-8O-naL"/>
+                            <constraint firstItem="3tN-TQ-3sO" firstAttribute="centerY" secondItem="cOt-XJ-Tbp" secondAttribute="centerY" id="VPw-E9-lk4"/>
+                            <constraint firstItem="cOt-XJ-Tbp" firstAttribute="top" secondItem="k9O-lK-0jd" secondAttribute="bottom" constant="20" id="e7Q-r6-SvW"/>
+                            <constraint firstItem="1yH-6i-z3q" firstAttribute="bottom" secondItem="cOt-XJ-Tbp" secondAttribute="bottom" constant="25" id="erU-cK-eTC"/>
+                            <constraint firstItem="1yH-6i-z3q" firstAttribute="trailing" secondItem="Ux0-lc-IFj" secondAttribute="trailing" constant="72" id="hNF-W4-UOS"/>
+                            <constraint firstItem="1yH-6i-z3q" firstAttribute="trailing" secondItem="k9O-lK-0jd" secondAttribute="trailing" constant="72" id="nXF-Jy-cCC"/>
+                            <constraint firstItem="k9O-lK-0jd" firstAttribute="top" secondItem="jXr-5a-p1H" secondAttribute="bottom" constant="20" id="p1n-Q1-rht"/>
+                            <constraint firstItem="jtf-3k-VV9" firstAttribute="leading" secondItem="1yH-6i-z3q" secondAttribute="leading" constant="9" id="qeR-cm-bSo"/>
+                            <constraint firstItem="jXr-5a-p1H" firstAttribute="leading" secondItem="1yH-6i-z3q" secondAttribute="leading" constant="9" id="tfw-ZH-NOX"/>
+                            <constraint firstItem="jXr-5a-p1H" firstAttribute="top" secondItem="jtf-3k-VV9" secondAttribute="bottom" constant="15" id="yTp-cK-1GO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1yH-6i-z3q"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fap-TI-HjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="-221"/>
+            <point key="canvasLocation" x="951.20000000000005" y="-221.73913043478262"/>
         </scene>
     </scenes>
     <resources>
+        <image name="addChannelButton" width="22" height="22"/>
+        <image name="menuProfileIcon" width="99" height="99"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>
 </document>
