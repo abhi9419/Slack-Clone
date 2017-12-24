@@ -10,6 +10,7 @@ import UIKit
 
 class ChannelVC: UIViewController {
 
+    @IBOutlet weak var loginBtnOutlet: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,6 +24,11 @@ class ChannelVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func loginBtn(_ sender: Any) {
+        
+        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        
+    }
     
 
 }
