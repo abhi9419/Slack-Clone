@@ -262,7 +262,7 @@
                                     <action selector="registerBtnPressed:" destination="SMH-XX-lOg" eventType="touchUpInside" id="xik-kY-aH9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fld-CQ-Wmj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fld-CQ-Wmj" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="235" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -273,6 +273,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -380,7 +385,7 @@
                                     <constraint firstAttribute="width" constant="250" id="3qV-bv-QXS"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wH2-U2-Cwm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wH2-U2-Cwm" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="607" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -391,6 +396,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createBtnPressed:" destination="lR4-nl-GxU" eventType="touchUpInside" id="9Y8-uo-tcj"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-YH-6P3">
                                 <rect key="frame" x="137.5" y="273" width="100" height="100"/>
@@ -408,6 +416,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="chooseAvatarPressed:" destination="lR4-nl-GxU" eventType="touchUpInside" id="bxM-gk-jZG"/>
                                     <action selector="registerBtnPressed:" destination="SMH-XX-lOg" eventType="touchUpInside" id="Okm-Jf-T9j"/>
                                 </connections>
                             </button>
@@ -417,6 +426,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="generateBgPressed:" destination="lR4-nl-GxU" eventType="touchUpInside" id="pHQ-ac-zhk"/>
                                     <action selector="registerBtnPressed:" destination="SMH-XX-lOg" eventType="touchUpInside" id="Ukb-rH-Lgr"/>
                                 </connections>
                             </button>
@@ -442,6 +452,10 @@
                         <viewLayoutGuide key="safeArea" id="z1a-05-Axf"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="rdg-HF-XU5" id="gpR-vy-DSn"/>
+                        <outlet property="passTxt" destination="pcg-N1-Wqe" id="8rU-fZ-Lvh"/>
+                        <outlet property="userImg" destination="NKB-YH-6P3" id="0w2-8a-mmf"/>
+                        <outlet property="usernameTxt" destination="V14-1k-Bj3" id="SCm-VI-w8N"/>
                         <segue destination="aWU-Hz-tfp" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="3fs-6D-Zfw"/>
                     </connections>
                 </viewController>
