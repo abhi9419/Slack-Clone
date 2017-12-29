@@ -15,6 +15,9 @@ UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    var avatarType = AvatarType.dark
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,7 +34,7 @@ UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "avatarCell", for: indexPath) as? AvatarCell{
-            
+            cell.configureCell(index: indexPath.item, type: avatarType)
             return cell
             
         }
@@ -53,9 +56,30 @@ UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if avatarType == .dark {
+            
+            UserDataService.instance.setAvatarName(avatarName: "dark\(indexPath.item)")
+            
+        }else{
+            UserDataService.instance.setAvatarName(avatarName: "light\(indexPath.item)")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+
+    
     @IBAction func segmentControlChanged(_ sender: Any) {
         
+        if segmentControl.selectedSegmentIndex == 0{
+            avatarType = .dark
+        }else{
+            avatarType = .light
+        }
         
+        collectionView.reloadData()
         
     }
     
