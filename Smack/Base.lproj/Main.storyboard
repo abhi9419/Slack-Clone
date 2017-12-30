@@ -430,6 +430,10 @@
                                     <action selector="registerBtnPressed:" destination="SMH-XX-lOg" eventType="touchUpInside" id="Ukb-rH-Lgr"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1TV-os-aAA">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -445,6 +449,8 @@
                             <constraint firstItem="z1a-05-Axf" firstAttribute="trailing" secondItem="vYh-Mi-Ge7" secondAttribute="trailing" constant="10" id="dpc-Gm-tv2"/>
                             <constraint firstItem="Qd6-cX-fHZ" firstAttribute="centerX" secondItem="TIX-SH-8Ue" secondAttribute="centerX" id="eAp-eb-GNd"/>
                             <constraint firstItem="Xuy-Lv-Ikj" firstAttribute="centerX" secondItem="TIX-SH-8Ue" secondAttribute="centerX" id="g1Q-0i-tNs"/>
+                            <constraint firstItem="1TV-os-aAA" firstAttribute="centerY" secondItem="TIX-SH-8Ue" secondAttribute="centerY" constant="-100" id="gCl-GT-fLV"/>
+                            <constraint firstItem="1TV-os-aAA" firstAttribute="centerX" secondItem="TIX-SH-8Ue" secondAttribute="centerX" id="ixG-jR-odJ"/>
                             <constraint firstItem="lXK-qy-OVA" firstAttribute="top" secondItem="NKB-YH-6P3" secondAttribute="top" id="kVu-MS-HsQ"/>
                             <constraint firstItem="lXK-qy-OVA" firstAttribute="width" secondItem="NKB-YH-6P3" secondAttribute="width" id="uGC-Hk-g2l"/>
                             <constraint firstItem="z1a-05-Axf" firstAttribute="bottom" secondItem="wH2-U2-Cwm" secondAttribute="bottom" constant="10" id="vdT-Zq-0s2"/>
@@ -452,6 +458,7 @@
                         <viewLayoutGuide key="safeArea" id="z1a-05-Axf"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="1TV-os-aAA" id="28V-Wh-ZKr"/>
                         <outlet property="emailTxt" destination="rdg-HF-XU5" id="gpR-vy-DSn"/>
                         <outlet property="passTxt" destination="pcg-N1-Wqe" id="8rU-fZ-Lvh"/>
                         <outlet property="userImg" destination="NKB-YH-6P3" id="0w2-8a-mmf"/>
