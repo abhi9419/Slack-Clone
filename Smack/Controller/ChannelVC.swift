@@ -10,13 +10,34 @@ import UIKit
 
 class ChannelVC: UIViewController {
 
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var loginBtnOutlet: UIButton!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_CHANGE, object: nil)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupUserInfo()
+    }
+    
+    func setupUserInfo(){
+        if AuthService.instance.isLoggedIn {
+            loginBtnOutlet.setTitle(UserDataService.instance.name, for: .normal)
+            userImage.image = UIImage(named: UserDataService.instance.avatarName)
+        }else{
+            loginBtnOutlet.setTitle("Login", for: .normal)
+            userImage.image = UIImage(named: "menuProfileIcon")
+        }
+    }
+    
+    @objc func userDataDidChange(_ notif: Notification){
+        
+        setupUserInfo()
         
     }
 
@@ -27,7 +48,16 @@ class ChannelVC: UIViewController {
     
     @IBAction func loginBtn(_ sender: Any) {
         
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        if AuthService.instance.isLoggedIn {
+                //Show Profile
+            let profile = ProfileVC()
+            profile.modalPresentationStyle = .custom
+            present(profile, animated: true, completion: nil)
+        }else{
+                performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        }
+        
+        
         
     }
     

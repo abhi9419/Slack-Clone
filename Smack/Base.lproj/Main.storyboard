@@ -174,6 +174,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtnOutlet" destination="3tN-TQ-3sO" id="BBy-Wz-SEU"/>
+                        <outlet property="userImage" destination="cOt-XJ-Tbp" id="Bn4-Us-mqj"/>
                         <segue destination="SMH-XX-lOg" kind="show" identifier="toLogin" id="t0N-2q-t1d"/>
                     </connections>
                 </viewController>
@@ -278,7 +279,14 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="SMH-XX-lOg" eventType="touchUpInside" id="UeJ-rN-DBc"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CpG-sT-59C">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -287,9 +295,11 @@
                             <constraint firstItem="ksq-Fu-zXI" firstAttribute="top" secondItem="fld-CQ-Wmj" secondAttribute="bottom" constant="5" id="40K-jM-GQo"/>
                             <constraint firstItem="ksq-Fu-zXI" firstAttribute="centerX" secondItem="LJg-QH-CWe" secondAttribute="centerX" id="H0y-6h-EAI"/>
                             <constraint firstItem="4Qr-vf-GXy" firstAttribute="centerX" secondItem="LJg-QH-CWe" secondAttribute="centerX" id="Pfs-fr-2r2"/>
+                            <constraint firstItem="CpG-sT-59C" firstAttribute="centerY" secondItem="LJg-QH-CWe" secondAttribute="centerY" id="Rae-Ny-c8i"/>
                             <constraint firstItem="fld-CQ-Wmj" firstAttribute="centerX" secondItem="LJg-QH-CWe" secondAttribute="centerX" id="ZDb-CO-Kke"/>
                             <constraint firstItem="RCQ-Gn-EPj" firstAttribute="top" secondItem="LJg-QH-CWe" secondAttribute="top" constant="8" id="am6-zL-0bT"/>
                             <constraint firstItem="UAl-UU-oc6" firstAttribute="top" secondItem="vDK-NA-DGZ" secondAttribute="top" constant="60" id="cNf-Cl-Okv"/>
+                            <constraint firstItem="CpG-sT-59C" firstAttribute="centerX" secondItem="LJg-QH-CWe" secondAttribute="centerX" id="f1r-Pe-bMK"/>
                             <constraint firstItem="UAl-UU-oc6" firstAttribute="centerX" secondItem="LJg-QH-CWe" secondAttribute="centerX" id="jMw-Ri-bXR"/>
                             <constraint firstItem="4Qr-vf-GXy" firstAttribute="top" secondItem="UAl-UU-oc6" secondAttribute="bottom" constant="15" id="q3c-Vu-61A"/>
                         </constraints>
@@ -297,6 +307,10 @@
                     </view>
                     <connections>
                         <outlet property="closeBtnPressed" destination="RCQ-Gn-EPj" id="ZEe-PR-onT"/>
+                        <outlet property="loginBtn" destination="fld-CQ-Wmj" id="Mzd-ql-xNg"/>
+                        <outlet property="passTxt" destination="rQ6-iV-XSa" id="VUI-G3-TCl"/>
+                        <outlet property="spinner" destination="CpG-sT-59C" id="5cC-cI-AHZ"/>
+                        <outlet property="userName" destination="FjF-SX-fgG" id="GbP-rb-cIG"/>
                         <segue destination="lR4-nl-GxU" kind="show" identifier="toCreateAccount" id="gLX-Nl-csl"/>
                     </connections>
                 </viewController>
